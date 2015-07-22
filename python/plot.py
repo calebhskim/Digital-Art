@@ -375,7 +375,7 @@ def argcmp(z1, z2):
 
 def writegif(filename, images, duration=0.01):
     images2gif.writeGif(dir+filename+".gif", images, duration)
-    print "saved", filename+".gif", "to", dir, "at", time.asctime()
+    print ("saved", filename+".gif", "to", dir, "at", time.asctime())
 
 def frange(start, stop=None, step=1.0):
     if stop is None:
@@ -793,7 +793,7 @@ def complexroots(deg, vw, color=rgb(5,0,0), epsilon=0.3, coeffs=[-1, 1], filenam
     data = init(vw)
     for i,l in enumerate(itertools.product(coeffs, repeat = deg+1)):
         if i%len(coeffs)**(deg-4) == 0:
-             print float(i)/2**(deg+1)
+             print (float(i)/2**(deg+1))
         for root in np.roots(l):
             data.putpoint((root.real, root.imag), color, True)
     if filename is None:
@@ -897,14 +897,12 @@ def pict2graphpict(img, condition=None, treefunc="dfs", func="bfs", colorfunc="h
 
 fileextension = '.png'
 dir = ""
-<<<<<<< Updated upstream
-=======
+
 SCREEN = 1
 
 mkdir()
 if SCREEN:
     DC = GetDC(0)
->>>>>>> Stashed changes
 
 vw0 = viewwindow(xmin=3, xmax=300, ymin=0, ymax=5, tmin=0, tmax=2*pi, tstep=pi/500, dimx=1000, dimy=1000, thick=2, axisx=1, axisy=1)
 vw1 = viewwindow(xmin=-4, xmax=4, ymin=-4, ymax=4, tmin=0, tmax=2*pi, tstep=pi/500, dimx=700, dimy=700, thick=1, axisx=1, axisy=1)
@@ -914,7 +912,7 @@ vw4 = viewwindow(xmin=-1.96, xmax=1.96, ymin=-1.1, ymax=1.1, tmin=0, tmax=2*pi, 
 vw5 = viewwindow(xmin=-2.3, xmax=0.7, ymin=-1.5, ymax=1.5, tmin=0, tmax=2*pi, tstep=pi/200, dimx=700, dimy=700, thick=0, axisx=0, axisy=0)
 vw6 = viewwindow(xmin=-1.5, xmax=1.5, ymin=-1.5, ymax=1.5, tmin=0, tmax=2*pi, tstep=pi/200, dimx=500, dimy=500, thick=1, axisx=0, axisy=0)
 vw7 = viewwindow(xmin=-1, xmax=1, ymin=-2, ymax=2, tmin=0, tmax=2*pi, tstep=pi/500, dimx=800, dimy=800, thick=2, axisx=0, axisy=0)
-<<<<<<< Updated upstream
+
 
 if __name__ == "__main__":
     SCREEN = 1
@@ -922,15 +920,15 @@ if __name__ == "__main__":
     if SCREEN:
         DC = GetDC(0)
 
-    print "Execution began "+time.asctime()
+    print ("Execution began "+time.asctime())
     pict2graphpict("yuanxiang.png", gif=True)
     rk4(lambda x,y: x+y, [(0,1)], vw1, sf=True)
     graphpict(1366, 768, g="grid", treefunc=None, func="esco", gif=True)
     gridspanningtree2(20, 20, d=4, r=0, g="grid", treefunc="spanningtreedfs", func="dfs", gif=True)
-=======
+
 #print "Execution began "+time.asctime()
 #pict2graphpict("yuanxiang.png", gif=True)
 #rk4(lambda x,y: x+y, [(0,1)], vw1, sf=True)
 #graphpict(1366, 768, g="grid", treefunc=None, func="esco", gif=True)#, v1=(0,0), v0=(0,0))
 #gridspanningtree2(20, 20, d=4, r=0, g="grid", treefunc="spanningtreedfs", func="dfs", gif=True)
->>>>>>> Stashed changes
+
